@@ -28,6 +28,22 @@
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+    .message {
+      font-size: 1.5em;
+      color: #d500f9;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    .hint {
+      font-size: 1em;
+      color: #888;
+      margin-top: 10px;
+    }
+    .hearts {
+      font-size: 2em;
+      color: red;
+      margin-top: 20px;
+    }
     .decor {
       position: fixed;
       top: 0;
@@ -48,11 +64,21 @@
     <img src="photo1.jpg" alt="爸爸妈妈合照1">
     <img src="photo2.jpg" alt="爸爸妈妈合照2">
   </div>
+  <div class="message">
+    愿你们的生活永远充满幸福、健康和平安。<br>
+    谢谢你们一直以来的支持与关爱，<br>
+    你们是我最坚强的后盾，<br>
+    祝愿你们天天开心，岁岁平安！
+  </div>
+  <div class="hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
+  <div class="hint">（点击页面任意位置播放生日歌）</div>
+
   <canvas class="decor" id="confetti"></canvas>
   <audio id="birthdayAudio" loop>
     <source src="happy_birthday.mp3" type="audio/mpeg">
     您的浏览器不支持音频播放。
   </audio>
+
   <script>
     // 自动播放音频（需用户交互）
     window.addEventListener('DOMContentLoaded', () => {
