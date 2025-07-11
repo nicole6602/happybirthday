@@ -49,11 +49,29 @@
     <img src="photo2.jpg" alt="爸爸妈妈合照2">
   </div>
   <canvas class="decor" id="confetti"></canvas>
-  <audio autoplay loop>
+  <audio id="birthdayAudio" loop>
     <source src="happy_birthday.mp3" type="audio/mpeg">
     您的浏览器不支持音频播放。
   </audio>
   <script>
+    // 自动播放音频（需用户交互）
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('birthdayAudio');
+
+      const playAudio = () => {
+        audio.play().catch(err => {
+          console.log("音频自动播放被浏览器拦截，等待用户操作。");
+        });
+        document.removeEventListener('click', playAudio);
+      };
+
+      // 尝试立即播放
+      playAudio();
+
+      // 用户点击页面任意处再次尝试播放（解决浏览器限制）
+      document.addEventListener('click', playAudio);
+    });
+
     // 彩带效果
     const canvas = document.getElementById('confetti');
     const ctx = canvas.getContext('2d');
